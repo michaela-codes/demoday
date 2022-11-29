@@ -16,13 +16,13 @@ const getChild = async (req, res, next) => {
 
 const addNewChild = async (req, res, next) => {
     console.log('controller :: addNewChild');
-    const input = req.body;
+    //const input = req.body;
 
-    if (!input.name || !input.age) {
-        res.status(400).send({error: 'Child name and age are required!'});
+    //if (!input.name || !input.age) {
+       // res.status(400).send({error: 'Child name and age are required!'});
 
-        return;
-    };
+        //return;
+    //};
 
     try {
         const newChild = await coordinator.addNewChild(req.body);
