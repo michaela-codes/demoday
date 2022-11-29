@@ -7,7 +7,7 @@ const port = 4000;
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/api/v1/demoday', demoRouter)
+app.use('/api/v1/children', demoRouter)
 
 
 const dbConfig = {
