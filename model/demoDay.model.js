@@ -23,25 +23,16 @@ class demoModel {
   };
 
   static editChild = async (id, updatedItem) => {
-    const update = {
-      $set: {}
-    };
-
-    Object.keys(update).forEach((key) => {
-      update.$set[key] = updatedItem[key];
-    });
-
-    const updatedChild = Object.assign(update, updatedItem);
 
     const result = await db
       .getDb()
       .collection(COLLECTION)
-      .updateOne({ id }, { $set: { update: updatedItem } });
-    if (result.modifiedCount === 0) {
+      .replaceOne({ id }, updatedItem);
+    if (result.matchedCount === 0) {
       return false;
     }
 
-    return updatedChild;
+    return updatedItem;
   };
 
   static getAllChildren = async () => {

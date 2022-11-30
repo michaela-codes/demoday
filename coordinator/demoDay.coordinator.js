@@ -21,6 +21,7 @@ class demoCoordinator {
     };
 
     static editChild = async (id, updatedItem) => {
+        updatedItem.id = id;
         console.log('coordinator :: editChild');
         return model.editChild(id, updatedItem)
     };

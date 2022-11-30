@@ -58,8 +58,8 @@ const getAllChildren = async (req, res, next) => {
 
 const editChild = async (req, res, next) => {
     console.log('controller :: editChild');
+    const updatedChild = await coordinator.editChild(req.params.id, req.body);
     try {
-        const updatedChild = await coordinator.editChild(req.params.id, req.body);
         if (updatedChild) {
             res.status(200).send(updatedChild)
         } else {
