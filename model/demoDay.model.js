@@ -4,7 +4,7 @@ const COLLECTION = "demoday";
 
 class demoModel {
   static getChild = async (id) => {
-    return db.getDb().collection(COLLECTION).find({ id }, { projection: { _id: 0 } });
+    return db.getDb().collection(COLLECTION).findOne({ id }, { projection: { _id: 0 } });
   };
 
   static addNewChild = async (child) => {
