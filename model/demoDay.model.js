@@ -24,7 +24,7 @@ class demoModel {
 
   static editChild = async (id, updatedItem) => {
     const update = {
-      $set: {},
+      $set: {}
     };
 
     Object.keys(update).forEach((key) => {

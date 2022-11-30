@@ -7,7 +7,7 @@ router.post('/', controller.addNewChild);
 router.get('/', controller.getAllChildren);
 router.delete('/:id', controller.removeChild);
 router.get('/:id', controller.getChild);
-router.patch('/:id', controller.editChild)
+router.put('/:id', controller.editChild)
 
 
 module.exports = router
