@@ -7,7 +7,7 @@ const getChild = async (req, res, next) => {
         if (child) {
             res.status(200).send(child);
         } else {
-            res.sendStatus(404);
+            res.status(404).send;
         };
     } catch (ex) {
         return next(ex);
@@ -37,9 +37,9 @@ const removeChild = async (req, res, next) => {
     try {
         const removed = await coordinator.removeChild(req.params.id);
         if (removed) {
-            res.sendStatus(200);
+            res.status(200).send();
         } else {
-            res.sendStatus(404);
+            res.status(404).send();
         };
     } catch(ex) {
         return next(ex);
@@ -63,7 +63,7 @@ const editChild = async (req, res, next) => {
         if (updatedChild) {
             res.status(200).send(updatedChild)
         } else {
-            res.sendStatus(404);
+            res.status(404).send;
         }
     } catch(ex) {
         return next(ex);
